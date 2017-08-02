@@ -29,7 +29,7 @@ CREATE WIDGET-POOL.
 &ENDIF
 
 /* DataDigger */
-{ Datadigger.i }
+{ DataDigger.i }
 
 /* _UIB-CODE-BLOCK-END */
 &ANALYZE-RESUME

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- How to execute : ant -lib ..\pct\dist\PCT.jar -DDLC=%DLC% clean build sonar -->
+<project name="DataDigger" >
+  <taskdef resource="PCT.properties" />
+
+  <!-- Default values for local development instance of SonarQube -->
+  <property name="sonar.host.url" value="http://localhost:9000" />
+
+  <target name="clean">
+    <delete dir="target" />
+  </target>
+
+  <target name="init">
+    <mkdir dir="target/build" />
+    <PCTVersion />
+    <ProgressVersion dlcHome="${DLC}" fullVersion="dlc.version.full" />
+    <echo message="${dlc.version.full}" />
+  </target>
+
+  <target name="build">
+    <PCTCompile destdir="target/build" graphicalMode="true" dlcHome="${DLC}" cpinternal="utf-8" cpstream="utf-8" listing="true" relativePaths="true" xmlXref="true" keepXref="true" requireFullKeywords="true" requireFullNames="true" requireFieldQualifiers="true">
+      <fileset dir="src/main/oe" includes="**/*.p,**/*.w,**/*.cls" />
+      <propath>
+        <pathelement location="src/main/oe" />
+      </propath>
+    </PCTCompile>
+  </target>
+
+  <target name="dist">
+    <zip destFile="target/DataDigger.zip">
+      <fileset dir="target/build" includes="*.r" />
+      <fileset dir="src/main/oe" includes="*.wrx" />
+      <fileset dir="src/main/resources" includes="*.bat,*.ini,*.txt,image/*" />
+    </zip>
+  </target>
+
+  <target name="sonar" >
+    <java classname="org.sonarsource.scanner.cli.Main" fork="true" failOnError="true">
+      <jvmarg value="-Drunner.home=." />
+      <jvmarg value="-Dproject.home=." />
+      <jvmarg value="-Dsonar.host.url=${sonar.host.url}" />
+      <jvmarg value="-Dsonar.oe.dlc=${DLC}" />
+      <!-- Uncomment to activate verbose mode in Sonar -->
+      <!-- <arg line="-X" /> -->
+      <classpath location="sonar-scanner-cli-3.0.3.778.jar" />
+    </java>
+  </target>
+
+</project>
