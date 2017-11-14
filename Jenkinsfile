@@ -13,20 +13,8 @@ pipeline {
         }
         archiveArtifacts artifacts: 'target/DataDigger.zip'
       }
-      post {
-        always {
-          mail to:" gquerret@riverside-software.fr", 
-               subject: "${currentBuild.fullDisplayName} DD build executed",
-               body: "Empty..."
-        }
-        failure {
-          mail to: "gquerret@riverside-software.fr", 
-               subject: "${currentBuild.fullDisplayName} build failure!",
-               body: "Empty..."
-        }
-      }
-
     }
+
     stage ('Code analysis') {
       when {
         branch "*/develop"
