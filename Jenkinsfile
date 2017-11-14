@@ -29,8 +29,10 @@ pipeline {
 
     stage ('Test install') {
       agent {
-        label 'windows'
-        customWorkspace 'Z:\\TestDeployment\\DD-${BRANCH_NAME}'
+        node {
+          label 'windows'
+          customWorkspace "Z:\\TestDeployment\\DD-${BRANCH_NAME}"
+        }
       }
       steps {
         unstash name: 'windows-build'
