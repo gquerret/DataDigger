@@ -3,7 +3,7 @@ pipeline {
   options {
     buildDiscarder(logRotator(numToKeepStr:'5'))
     timeout(time: 30, unit: 'MINUTES')
-    skipDefaultCheckout
+    skipDefaultCheckout()
   }
   stages {
     stage ('Build') {
