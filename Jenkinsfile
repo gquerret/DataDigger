@@ -15,12 +15,14 @@ pipeline {
       }
       post {
         always {
-          mail to:"gquerret@riverside-software.fr", 
-            subject:"${currentBuild.fullDisplayName} DD build executed"
+          mail to:" gquerret@riverside-software.fr", 
+               subject: "${currentBuild.fullDisplayName} DD build executed"
+               body: ""
         }
         failure {
-          mail to:"gquerret@riverside-software.fr", 
-            subject:"${currentBuild.fullDisplayName} build failure!"
+          mail to: "gquerret@riverside-software.fr", 
+               subject: "${currentBuild.fullDisplayName} build failure!"
+               body: ""
         }
       }
 
