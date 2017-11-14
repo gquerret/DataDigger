@@ -426,7 +426,7 @@ DEFINE IMAGE imgArrow
 
 DEFINE BUTTON btnAdd  NO-FOCUS FLAT-BUTTON
      LABEL "&Add"
-     SIZE-PIXELS 25 BY 23 TOOLTIP "add a record #(INS)".
+     SIZE-PIXELS 25 BY 23 TOOLTIP "Ajouter enregistrement #(INS)".
 
 DEFINE BUTTON btnClear
      LABEL "&C"
@@ -456,7 +456,7 @@ DEFINE BUTTON btnClone  NO-FOCUS FLAT-BUTTON
      SIZE-PIXELS 25 BY 23 TOOLTIP "clone focused record and edit #(ALT-O)".
 
 DEFINE BUTTON btnDelete  NO-FOCUS FLAT-BUTTON
-     LABEL "Del"
+     LABEL "Suppr"
      SIZE-PIXELS 25 BY 23 TOOLTIP "delete the selected records #(DEL)".
 
 DEFINE BUTTON btnDump  NO-FOCUS FLAT-BUTTON
