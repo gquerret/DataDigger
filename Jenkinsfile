@@ -28,7 +28,7 @@ pipeline {
     }
 
     stage ('Test install') {
-      node {
+      agent {
         label 'windows'
         customWorkspace 'Z:\\TestDeployment\\DD-${BRANCH_NAME}'
       }
