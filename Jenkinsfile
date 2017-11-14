@@ -15,7 +15,7 @@ pipeline {
         withEnv(["PATH+ANT=${tool name: 'Ant 1.9', type: 'hudson.tasks.Ant$AntInstallation'}/bin",
                  "DLC=${tool name: 'OpenEdge-11.7', type: 'jenkinsci.plugin.openedge.OpenEdgeInstallation'}"]) {
           bat "ant -DDLC=%DLC% -lib PCT.jar build dist"
-          bat "echo $TARGET"
+          bat "echo ${params.TARGET}"
         }
         archiveArtifacts artifacts: 'target/DataDigger.zip'
       }
