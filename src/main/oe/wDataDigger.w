@@ -425,8 +425,8 @@ DEFINE IMAGE imgArrow
      SIZE-PIXELS 32 BY 32.
 
 DEFINE BUTTON btnAdd  NO-FOCUS FLAT-BUTTON
-     LABEL "&Ajouter"
-     SIZE-PIXELS 25 BY 23 TOOLTIP "add a record #(INS)".
+     LABEL "&Add"
+     SIZE-PIXELS 25 BY 23 TOOLTIP "Ajouter enregistrement #(INS)".
 
 DEFINE BUTTON btnClear
      LABEL "&C"
