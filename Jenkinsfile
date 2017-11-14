@@ -17,12 +17,12 @@ pipeline {
         always {
           mail to:" gquerret@riverside-software.fr", 
                subject: "${currentBuild.fullDisplayName} DD build executed",
-               body: ""
+               body: "Empty..."
         }
         failure {
           mail to: "gquerret@riverside-software.fr", 
                subject: "${currentBuild.fullDisplayName} build failure!",
-               body: ""
+               body: "Empty..."
         }
       }
 
