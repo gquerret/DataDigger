@@ -19,3 +19,7 @@ gcProgramDir = SUBSTRING(gcProgramDir,1,R-INDEX(gcProgramDir,'/')).
 RUN VALUE(gcProgramDir + "DataDigger2.p") (INPUT FALSE).
 
 /* Something new... */
+
+
+
+message "hello".
